@@ -1,10 +1,10 @@
  const IMG_SRC = "images/folder.png";
    
-let heroImg;
-  function preload(){
-    // Use the real embedded data URL (injected below).
-    const embedded = document.currentScript.previousElementSibling.previousElementSibling.textContent;
-  }
+// let heroImg;
+//   function preload(){
+//     // Use the real embedded data URL (injected below).
+//     const embedded = document.currentScript.previousElementSibling.previousElementSibling.textContent;
+//   }
 
     const __IMG_DATA = "images/folder.png";
     let heroImg2;
