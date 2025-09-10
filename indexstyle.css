@@ -1,0 +1,131 @@
+:root{
+  --bg: #f7dfd8;     /* soft pink background */
+  --ink: #c64a60;    /* rose text */
+}
+
+/* Base */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0;
+  height:100%;
+  background:var(--bg);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Layout */
+.page{
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:1fr;
+}
+
+/* Sidebar (mobile-first) */
+.sidebar{
+  position:fixed;
+  inset:0 auto 0 0;
+  width:min(180px, 42vw);
+  padding:22px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.eye{
+  width:26px;
+  height:auto;
+  color:var(--ink);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.5px;
+}
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:6px;
+}
+.nav-link{
+  font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:13px;
+  letter-spacing:0.12em;
+  text-decoration:none;
+  color:var(--ink);
+  opacity:.9;
+}
+.nav-link:hover{ opacity:1; text-decoration:underline; }
+
+.intro{
+  font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:13px;
+  line-height:1.35;
+  letter-spacing:.0.4em;
+  max-width:300px;
+  padding: 10px 0 0 2px;;
+  margin-top:6px;
+  opacity:.85;
+}
+
+/* Top-right folder shortcut (optional) */
+.folder-button{
+  background:transparent;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  transition: transform .15s ease; 
+}
+.folder-button:hover{ 
+  transform: translateY(-2px); }
+.folder-button img{
+  width:72px;
+  height:auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
+}
+
+/* Hero canvas */
+/* Center hero area to the right of the sidebar */
+.hero{
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  margin-left: min(100px, 42vw); /* matches your sidebar width rule */
+}
+.hero-wrap{
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Curved HELLO */
+.hello-arc{ width: clamp(10px, 60vw, 280px); height: auto; }
+.hello-text{
+  font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  fill: var(--ink);
+}
+
+/* The main (centered) button */
+.folder-hero img{
+  width: clamp(220px, 60vw, 420px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(228, 66, 66, 0.15));
+}
+#sketch-holder canvas{
+  width:100% !important;
+  height:auto !important;
+  display:block;
+}
+
+/* Desktop tweaks */
+@media (min-width:900px){
+  #sketch-holder{ margin-left:220px; }
+  .sidebar{ width:220px; padding:26px 22px; }
+  .nav-link{ font-size:14px; }
+  .intro{ font-size:12px; max-width:160px; }
+}

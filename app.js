@@ -1,99 +1,51 @@
-// app.js — tiny hash router + p5 background
-
-// ----- Router -----
-function show(route) {
-  const archive = document.getElementById('view-archive');
-  const reflection = document.getElementById('view-reflection');
-  if (route === 'reflection') {
-    archive.classList.remove('active');
-    reflection.classList.add('active');
-  } else {
-    reflection.classList.remove('active');
-    archive.classList.add('active');
+ const IMG_SRC = "images/folder.png";
+   
+let heroImg;
+  function preload(){
+    // Use the real embedded data URL (injected below).
+    const embedded = document.currentScript.previousElementSibling.previousElementSibling.textContent;
   }
-}
 
-window.addEventListener('hashchange', () => show(location.hash.replace('#','')));
+    const __IMG_DATA = "images/folder.png";
+    let heroImg2;
+    function preload(){
+      heroImg2 = loadImage(__IMG_DATA, () => {}, () => {
+        // fallback shape if something goes wrong
+        heroImg2 = createGraphics(400, 300);
+        heroImg2.clear(); heroImg2.noStroke(); heroImg2.fill(214, 78, 104, 200);
+        heroImg2.ellipse(300, 360, 380, 500);
+      });
+    }
+    function setup(){
+      const holder = document.getElementById('sketch-holder');
+      const w = window.innerWidth - holder.getBoundingClientRect().left;
+      const h = Math.max(520, window.innerHeight * 0.99);
+      const cnv = createCanvas(w, h); cnv.parent('sketch-holder'); noLoop();
+    }
+    function windowResized(){ setup(); redraw(); }
+    function draw(){
+      // background('#d3907cff');
+       background('#f7dfd8');
+      
+      // compute scaled size
+      const maxW = Math.min(width * 0.65, 300);
+      const scale = maxW / heroImg2.width;
+      const imgW = heroImg2.width * scale;
+      const imgH = heroImg2.height * scale;
+      const cx = width * 0.48; const cy = height * 0.48;
+      imageMode(CENTER); image(heroImg2, cx, cy, imgW, imgH);
 
-window.addEventListener('DOMContentLoaded', () => {
-
-  show(location.hash.replace('#','') || 'archive');
-
-  document.getElementById('folderBtn').addEventListener('click', () => {
-    location.hash = '#reflection';
-  });
-});
-
-
-// const laceSketch = (p) => {
-//   let dpr = 1;
-
-//   p.setup = () => {
-//     dpr = Math.min(window.devicePixelRatio || 1, 2);
-//     const c = p.createCanvas(p.windowWidth, p.windowHeight);
-//     c.elt.style.position = 'fixed';
-//     c.elt.style.left = '0';
-//     c.elt.style.top = '0';
-//     c.elt.style.zIndex = '-1';
-//     c.elt.style.pointerEvents = 'none';
-//     p.pixelDensity(dpr);
-//     p.noLoop();
-//     drawLace();
-//   };
-
-//   p.windowResized = () => {
-//     p.resizeCanvas(p.windowWidth, p.windowHeight);
-//     drawLace();
-//   };
-// // lace drawing, i dont think it works though
-//   function drawLace() {
-    
-//     const bg = p.color('#f4f4f5');
-//     const ink = p.color(0, 0, 0, 12);        
-//     const silver = p.color(192, 196, 204, 40); 
-
-//     p.background(bg);
-
-
-//     p.stroke(ink);
-//     p.strokeWeight(1);
-//     const step = 32;
-//     for (let x = 0; x <= p.width; x += step) p.line(x, 0, x, p.height);
-//     for (let y = 0; y <= p.height; y += step) p.line(0, y, p.width, y);
-
- 
-//     p.noFill();
-//     p.stroke(silver);
-//     p.strokeWeight(1.2);
-//     const r = 28;
-//     const gap = 8;
-
-//     for (let x = gap; x < p.width; x += r + gap) {
-//       p.arc(x, gap, r, r, p.PI, p.TWO_PI);
-//     }
-
-//     for (let x = gap; x < p.width; x += r + gap) {
-//       p.arc(x, p.height - gap, r, r, 0, p.PI);
-//     }
-
-//     for (let y = gap; y < p.height; y += r + gap) {
-//       p.arc(gap, y, r, r, p.HALF_PI, p.PI + p.HALF_PI);
-//     }
-
-//     for (let y = gap; y < p.height; y += r + gap) {
-//       p.arc(p.width - gap, y, r, r, -p.HALF_PI, p.HALF_PI);
-//     }
-
-//     p.noStroke();
-//     const vignette = p.drawingContext.createRadialGradient(
-//       p.width / 2, p.height / 2, Math.min(p.width, p.height) * 0.2,
-//       p.width / 2, p.height / 2, Math.max(p.width, p.height) * 0.7
-//     );
-//     vignette.addColorStop(0, 'rgba(0,0,0,0)');
-//     vignette.addColorStop(1, 'rgba(0,0,0,0.06)');
-//     p.drawingContext.fillStyle = vignette;
-//     p.rect(0, 0, p.width, p.height);
-//   }
-// };
-
-// new p5(laceSketch);
+      // curved HELLO above
+      push();
+      translate(cx, cy - imgH * 0.52);
+      const r = imgW * 0.55; const textStr = 'HELLO';
+      textFont('DM Mono, monospace'); textSize(15); noStroke(); fill('#c64a60');
+      const totalAngle = radians(30); const start = -totalAngle/2; // centered
+      for(let i=0;i<textStr.length;i++){
+        const t = i/(textStr.length-1); const a = start + t*totalAngle - HALF_PI;
+        const x = r * Math.cos(a); const y = r * Math.sin(a);
+        push(); translate(x,y); rotate(a + HALF_PI);
+        text(textStr[i], -textWidth(textStr[i])/2, 0); pop();
+      }
+      pop();
+    }
