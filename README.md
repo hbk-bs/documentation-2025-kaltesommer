@@ -1,3 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/yqeFQCSs)
-
-how this websites works 
+Documentation 2
+Second Semester of the module "digital communication"
+Here you will find
+- teachable machine
+- nature of code
+- text the universal interface
+- a generative graphic nobel
+- debate club
+- archive of last semester
+- reflection
+Hope you enjoy.
