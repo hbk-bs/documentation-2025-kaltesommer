@@ -159,6 +159,7 @@ body{
   display: block;
   filter: drop-shadow(0 2px 4px rgba(228, 66, 66, 0.15));
   transform: translateY(-450px);
+  margin-left: 35px;
 }
 .folder-hero2 img{
     width: clamp(220px, 60vw, 420px);
