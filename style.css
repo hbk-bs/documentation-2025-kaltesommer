@@ -54,7 +54,9 @@ body{
   color:var(--ink);
   opacity:.9;
 }
-.nav-link:hover{ opacity:1; text-decoration:underline; }
+.nav-link:hover{ 
+  opacity:1; 
+  text-decoration:underline; }
 
 .intro{
   font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -98,7 +100,7 @@ body{
 .hello-arc{ width: clamp(10px, 60vw, 280px); height: auto; }
 .hello-text{
   font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: 0.12em;
   fill: var(--ink);
 }
