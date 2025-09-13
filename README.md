@@ -1,4 +1,4 @@
-Documentation 2
+## Documentation two
 Second Semester of the module "digital communication"
 Here you will find
 - teachable machine
