@@ -1,3 +1,11 @@
 https://hbk-bs.github.io/teachable-machine-kaltesommer/
 https://hbk-bs.github.io/nature-of-code-kaltesommer/
 https://hbk-bs.github.io/text-the-universal-interface-kaltesommer/
+-->
+repository links
+https://github.com/hbk-bs/text-the-universal-interface-kaltesommer
+
+https://github.com/hbk-bs/teachable-machine-kaltesommer
+https://github.com/hbk-bs/nature-of-code-kaltesommer
+
+https://github.com/hbk-bs/a-generative-graphic-novel-graphik_linda_kirsten_ivo

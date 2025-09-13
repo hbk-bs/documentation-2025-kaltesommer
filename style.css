@@ -101,15 +101,19 @@ body{
   transition: transform .2s ease, filter .2s ease;
 }
 .folder-hero:hover img {
-  transform: translateY(-4px) scale(1.07);
+  transform: translateY(-460px) scale(1.07);
   filter: drop-shadow(0 8px 12px rgba(0,0,0,.25));
 }
 
+.nav-projects{
+  transform: translateY(-190px);
+}
 .hero{
   min-height: 100svh;
   display: grid;
   place-items: center;
   margin-left: min(100px, 42vw);
+  margin-right: min(100px, 42vw);
 }
 .hero-wrap{
   display: grid;
@@ -117,13 +121,26 @@ body{
   gap: 10px;
   width: 100%;
 }
-
+.projects-arc{width: clamp(10px, 60vw, 280px);
+   height: auto;
+    margin-top: 18px;
+    /* background-color: #c64a60; */
+    transform: translateY(-160px);
+}
 .hello-arc{ width: clamp(10px, 60vw, 280px);
    height: auto;
     margin-top: 18px;
     /* background-color: #c64a60; */
     transform: translateY(-10px);
   }
+
+.hello-arc2{ width: clamp(10px, 60vw, 280px);
+   height: auto;
+    margin-top: 18px;
+    /* background-color: #c64a60; */
+    transform: translateY(-400px);
+  }
+
 .hello-text{
   font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 13px;
@@ -142,7 +159,40 @@ body{
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 4px rgba(228, 66, 66, 0.15));
+  transform: translateY(-450px);
 }
+.folder-hero2 img{
+    width: clamp(220px, 60vw, 420px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(228, 66, 66, 0.15));
+  transform: translateY(-70px);
+}
+
+.folder-hero2:hover img {
+  transform: translateY(-76px) scale(1.07);
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,.25));
+}
+
+.intro-about{
+  font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height:1.35;
+  letter-spacing:.0.4em;
+  max-width: 700px;
+  padding: 5px 00 0 2px;;
+  margin-top:50px;
+  display: flex;
+  transform: translateY(-280px);
+}
+
+.about-arc{width: clamp(10px, 60vw, 280px);
+   height: auto;
+    margin-top: 18px;
+    /* background-color: #c64a60; */
+    transform: translateY(-230px);
+}
+
 #sketch-holder canvas{
   width:100% !important;
   height:auto !important;
@@ -157,12 +207,12 @@ body{
   max-width: 35ch;
   padding: 10px 0 0 2px;;
   margin-top:6px;
+  color: #c64a60;
 }
 
 @media (min-width:768px){
-  .page{ margin-left: 220px;}
   #sketch-holder{ margin-left:220px; }
-  .sidebar{ width:220px; padding:26px 22px; }
+  .sidebar{ width:220px; padding:26px 22px;}
   .nav-link{ font-size:14px; }
   .hero img {max-width: 500px;}
   .intro{ font-size:12px; max-width:800px; }
