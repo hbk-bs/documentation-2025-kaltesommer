@@ -201,12 +201,12 @@ body{
 
 .projects{
   font-family:"DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size:15px;
+  font-size:14px;
   line-height:1.35;
   letter-spacing:none;
   max-width: 35ch;
-  padding: 10px 0 0 2px;;
-  margin-top:6px;
+  padding: 5px 00 0 2px;;
+  margin-top:0px;
   color: #c64a60;
 }
 
@@ -216,6 +216,6 @@ body{
   .nav-link{ font-size:14px; }
   .hero img {max-width: 500px;}
   .intro{ font-size:12px; max-width:800px; }
-  .projects{ font-size:16px; max-width:45ch;}
+  .projects{ font-size:12px; max-width:45ch;}
 }
 
