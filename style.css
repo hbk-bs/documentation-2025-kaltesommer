@@ -190,7 +190,7 @@ body{
    height: auto;
     margin-top: 18px;
     /* background-color: #c64a60; */
-    transform: translateY(-230px);
+    transform: translateY(-200px);
 }
 
 #sketch-holder canvas{
